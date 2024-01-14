@@ -1,0 +1,191 @@
+/* Reset styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Global styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile section styles */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.profile-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #444;
+    color: #fff;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+nav.expanded {
+    background-color: #444;
+}
+
+nav.expanded.scrolled {
+    background-color: #222;
+}
+
+/* Section styles */
+section {
+    padding: 6em 0;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Additional styling for the portfolio section */
+.project,
+.internship,
+.activity,
+ul {
+    text-align: left;
+    margin-left: 40px;
+}
+
+.project,
+.internship,
+.activity {
+    margin-bottom: 40px;
+}
+
+.project h4,
+.internship h4,
+.activity h4 {
+    color: #333;
+    font-size: 1.2em;
+}
+
+.project p,
+.internship p,
+.activity p {
+    color: #666;
+}
+
+/* Additional styling for the contact section */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-info p {
+    margin: 0 20px 20px 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1001;
+        border-radius: 0;
+    }
+
+    .nav-links a {
+        padding: 1em;
+        display: block;
+        text-align: center;
+    }
+
+    .burger-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 1000;
+    }
+
+    section {
+        padding-top: 4em;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        border-width: 3px;
+    }
+}
