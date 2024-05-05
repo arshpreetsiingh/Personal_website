@@ -2,14 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelector('.nav-links');
     const burgerMenu = document.querySelector('.burger-menu');
     const nav = document.querySelector('nav');
+    const videoFrames = document.querySelectorAll('.video-iframe');
 
-    // Toggle navigation menu on burger menu click
-    // burgerMenu.addEventListener('click', function () {
-    //     navLinks.classList.toggle('show');
-    //     nav.classList.toggle('expanded'); // Toggle the 'expanded' class on the top navigation bar
-    // });
-
-    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -23,17 +17,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (window.innerWidth <= 768) {
                 navLinks.classList.remove('show');
-                nav.classList.remove('expanded'); // Remove the 'expanded' class on scroll
+                nav.classList.remove('expanded');
             }
         });
     });
-
-    // Change navigation background on scroll
     window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             nav.style.backgroundColor = '#222';
         } else {
             nav.style.backgroundColor = '#444';
         }
+    });
+
+    videoFrames.forEach(frame => {
+        frame.addEventListener('click', function () {
+            if (frame.requestFullscreen) {
+                frame.requestFullscreen();
+            } else if (frame.mozRequestFullScreen) { /* Firefox */
+                frame.mozRequestFullScreen();
+            } else if (frame.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                frame.webkitRequestFullscreen();
+            } else if (frame.msRequestFullscreen) { /* IE/Edge */
+                frame.msRequestFullscreen();
+            }
+        });
     });
 });
